@@ -13,8 +13,27 @@
 .fontshow{
   line-height:200%;
   color: red;}
-body{
-  overflow-y: scroll;
+
+.frame {
+    overflow-y: auto;
+    height: 400pt;
+    width: 700pt;
+    line-height: 1em;
+}
+
+.frame::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+.frame::-webkit-scrollbar:vertical {
+    width: 100px;
+}
+.frame::-webkit-scrollbar:horizontal {
+    height: 11px;
+}
+.frame::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 2px solid white; /* should match background, can't be transparent */
+    background-color: rgba(0, 0, 0, .5);
 }
 </style>
 </head>
@@ -62,7 +81,8 @@ E-mail: <a href="li.chen.z2@a.mail.nagoya-u.ac.jp">li.chen.z2@a.mail.nagoya-u.ac
 </div>
 
 <h2>News</h2>
-<div style="height:200px;width:700px;overflow-y: scroll;">
+<!-- <div style="height:200px;width:700px;overflow-y: scroll;"> -->
+<div style class="frame">
 2023-10-13: Our paper was accepted by <b class= "fontshow">BIBM 2023 (acceptance rate: 19.5%)</b> <br>
 2023-09-30: Our paper was accepted by the journal <b class= "fontshow">Pattern Recognition Letters</b> <br>
 2023-08-07: Our paper was accepted by <b class= "fontshow">APWeb-WAIM 2023 (acceptance rate: 22.3%)</b> <br>
