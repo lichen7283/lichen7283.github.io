@@ -18,12 +18,15 @@
   
 .frame {
     overflow-y: auto;
-    max-width: 700px;
-    width: 100%;
-    height: auto;
+    width: 700px;
+    height: 200px;
     line-height: 1em;
-
 }
+/* 在较小的视口下重新定义 .frame 的样式 */
+@media only screen and (max-width: 600px) {
+    .frame {
+        height: auto; /* 根据内容调整高度 */
+    }
 .frame::-webkit-scrollbar {
     -webkit-appearance: none;
 }
