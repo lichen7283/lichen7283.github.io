@@ -59,7 +59,7 @@ Graduate School of Informatics, <br />
 E-mail: <a href="li.chen.z2@a.mail.nagoya-u.ac.jp">li.chen.z2@a.mail.nagoya-u.ac.jp</a></p>
 </td></tr></table>
 
-<h2>CV download</h2>
+<h2>CV Download</h2>
 <script>
   function showPasswordModal() {
     document.getElementById("passwordModal").style.display = "block";
@@ -87,12 +87,8 @@ E-mail: <a href="li.chen.z2@a.mail.nagoya-u.ac.jp">li.chen.z2@a.mail.nagoya-u.ac
 </script>
 
 <!-- 自定义密码模态框 -->
-<div id="passwordModal">
-  <!-- 使用 form 元素包裹密码输入框 -->
-  <form id="passwordForm">
-    <label for="passwordInput">Enter password:</label>
-    <input type="password" id="passwordInput">
-    <!-- 使用 type="submit" 的按钮，将其放置在 form 内 -->
-    <button type="submit">Submit</button>
-  </form>
+<div id="passwordModal" style="display: none;">
+  <label for="passwordInput">Enter password:</label>
+  <input type="password" id="passwordInput">
+  <button onclick="checkPassword()">Submit</button>
 </div>
