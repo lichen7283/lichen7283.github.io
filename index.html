@@ -15,30 +15,23 @@
 .fontshow{
   line-height:200%;
   color: red;}
-/*  
-  
-.frame{
+/* Scrollable news area */
+.news-container {
+    max-width: 700px;
+    margin: 20px auto;
     overflow-y: auto;
-    width: 700px;
-    height: 200px;
-    line-height: 1em;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    max-height: 200px; /* 设置最大高度，超过这个高度将启用垂直滚动条 */
 }
 
-.frame::-webkit-scrollbar {
-    -webkit-appearance: none;
+/* Media Query for small screens */
+@media only screen and (max-width: 600px) {
+    .news-container {
+        max-width: 90%; /* 调整宽度以适应小屏幕设备 */
+    }
 }
-.frame::-webkit-scrollbar:vertical {
-    width: 11px;
-}
-.frame::-webkit-scrollbar:horizontal {
-    height: 11px;
-}
-.frame::-webkit-scrollbar-thumb {
-    border-radius: 8px;
-    border: 2px solid white;
-    background-color: rgba(0, 0, 0, .5);
-}
-*/
 
 body {
     display: flex;
@@ -96,8 +89,8 @@ E-mail: <a href="li.chen.z2@a.mail.nagoya-u.ac.jp">li.chen.z2@a.mail.nagoya-u.ac
 </div>
 
 <h2>News</h2>
-<div style="height:200px;width:650px;overflow-y: auto;">
-<div style class="frame">
+<div class="news-container">
+<div class="frame">
 2024-01-24: Our paper won the AAAI 2024 outstanding paper award <b class= "fontshow">(3 of 2342 accepted papers)</b> <br>
 2024-01-20: Our one paper was accepted by the main track of <b class= "fontshow">AISTATS 2024</b> <br>
 2023-12-10: Our one paper was accepted by the main track of <b class= "fontshow">AAAI 2024</b> <br> 
@@ -112,4 +105,5 @@ E-mail: <a href="li.chen.z2@a.mail.nagoya-u.ac.jp">li.chen.z2@a.mail.nagoya-u.ac
 2023-06-02: Our two papers were accepted by <b class= "fontshow">KSEM 2023</b> <br>
 2023-04-23: Our paper was accepted by the journal <b class= "fontshow">Methods</b> <br>
 2023-02-25: Our paper was accepted by the journal <b class= "fontshow">Machine Intelligence Research</b> <br>
+</div>
 </div>
