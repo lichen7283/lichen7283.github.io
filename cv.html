@@ -59,20 +59,21 @@ Graduate School of Informatics, <br />
 E-mail: <a href="li.chen.z2@a.mail.nagoya-u.ac.jp">li.chen.z2@a.mail.nagoya-u.ac.jp</a></p>
 </td></tr></table>
 
-<h2>CV Download</h2>
+<h2>CV download</h2>
 <script>
   function showPasswordModal() {
     document.getElementById("passwordModal").style.display = "block";
-    document.getElementById("passwordInput").addEventListener("keyup", function(event) {
-      if (event.key === "Enter") {
-        checkPassword();
-      }
+
+    // 捕获表单的提交事件
+    document.getElementById("passwordForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // 阻止表单默认的提交行为
+      checkPassword();
     });
   }
 
   function checkPassword() {
     var enteredPassword = document.getElementById("passwordInput").value;
-    var correctPassword = "chenliinnagoya";
+    var correctPassword = "lichen@nagoya";
 
     if (enteredPassword === correctPassword) {
       // 替换这里的 "your_file_url" 为你要下载的文件的实际 URL
@@ -89,7 +90,11 @@ E-mail: <a href="li.chen.z2@a.mail.nagoya-u.ac.jp">li.chen.z2@a.mail.nagoya-u.ac
 
 <!-- 自定义密码模态框 -->
 <div id="passwordModal">
-  <label for="passwordInput">Enter password:</label>
-  <input type="password" id="passwordInput">
-  <button type="button" onclick="checkPassword()">Submit</button>
+  <!-- 使用 form 元素包裹密码输入框 -->
+  <form id="passwordForm">
+    <label for="passwordInput">Enter password:</label>
+    <input type="password" id="passwordInput">
+    <!-- 使用 type="submit" 的按钮，将其放置在 form 内 -->
+    <button type="submit">Submit</button>
+  </form>
 </div>
