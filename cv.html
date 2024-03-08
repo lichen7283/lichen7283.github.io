@@ -68,11 +68,20 @@ E-mail: <a href="li.chen.z2@a.mail.nagoya-u.ac.jp">li.chen.z2@a.mail.nagoya-u.ac
 
       if (enteredPassword === correctPassword) {
         // 替换这里的 "your_file_url" 为你要下载的文件的实际 URL
-        window.location.href = "https://github.com/lichen7283/my_cv/blob/main/chen%20li%20CV%20(March2024).pdf";
+        window.location.href = "https://www.dropbox.com/scl/fi/66sa2h7jszle3461zv21f/chen-li-CV-March2024.pdf?rlkey=dnavvp2khgtdd9r9q6o0eoa9c&dl=0";
       } else {
         alert("Incorrect password. Access denied.");
       }
+      // 隐藏密码模态框
+      document.getElementById("passwordModal").style.display = "none";
     }
   </script>
   
-<button onclick="checkPassword()">CV Download</button>
+<button onclick="showPasswordModal()">CV Download</button>
+
+<!-- 自定义密码模态框 -->
+<div id="passwordModal">
+  <label for="passwordInput">Enter password:</label>
+  <input type="password" id="passwordInput">
+  <button onclick="checkPassword()">Submit</button>
+</div>
