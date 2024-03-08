@@ -63,26 +63,24 @@ E-mail: <a href="li.chen.z2@a.mail.nagoya-u.ac.jp">li.chen.z2@a.mail.nagoya-u.ac
 <script>
   function showPasswordModal() {
     document.getElementById("passwordModal").style.display = "block";
-
-    // 捕获表单的提交事件
-    document.getElementById("passwordForm").addEventListener("submit", function(event) {
-      event.preventDefault(); // 阻止表单默认的提交行为
-      checkPassword();
+    document.getElementById("passwordInput").addEventListener("keyup", function(event) {
+      if (event.key === "Enter") {
+        checkPassword();
+      }
     });
   }
 
   function checkPassword() {
     var enteredPassword = document.getElementById("passwordInput").value;
-    var correctPassword = "lichen@nagoya";
+    var correctPassword = "chenliinnagoya";
 
     if (enteredPassword === correctPassword) {
       // 替换这里的 "your_file_url" 为你要下载的文件的实际 URL
       window.location.href = "https://www.dropbox.com/scl/fi/66sa2h7jszle3461zv21f/chen-li-CV-March2024.pdf?rlkey=dnavvp2khgtdd9r9q6o0eoa9c&dl=0";
     } else {
-      // 显示错误信息
-      document.getElementById("error-message").innerText = "Incorrect password. Access denied.";
-      // 清空密码输入框
-      document.getElementById("passwordInput").value = "";
+      alert("Incorrect password. Access denied.");
+      // 密码错误时刷新页面
+      location.reload();
     }
 
     document.getElementById("passwordModal").style.display = "none";
@@ -91,15 +89,8 @@ E-mail: <a href="li.chen.z2@a.mail.nagoya-u.ac.jp">li.chen.z2@a.mail.nagoya-u.ac
 
 <!-- 自定义密码模态框 -->
 <div id="passwordModal">
-  <!-- 使用 form 元素包裹密码输入框 -->
-  <form id="passwordForm">
-    <label for="passwordInput">Enter password:</label>
-    <input type="password" id="passwordInput">
-    <!-- 使用 type="submit" 的按钮，将其放置在 form 内 -->
-    <button type="submit">Submit</button>
-  </form>
-
-  <!-- 显示错误信息的容器 -->
-  <div id="error-message" style="color: red;"></div>
+  <label for="passwordInput">Enter password:</label>
+  <input type="password" id="passwordInput">
+  <button type="button" onclick="checkPassword()">Submit</button>
 </div>
 
