@@ -59,7 +59,7 @@ Graduate School of Informatics, <br />
 E-mail: <a href="li.chen.z2@a.mail.nagoya-u.ac.jp">li.chen.z2@a.mail.nagoya-u.ac.jp</a></p>
 </td></tr></table>
 
-<h2>CV download</h2>
+<h2>CV Download</h2>
 <script>
   function showPasswordModal() {
     document.getElementById("passwordModal").style.display = "block";
@@ -79,9 +79,10 @@ E-mail: <a href="li.chen.z2@a.mail.nagoya-u.ac.jp">li.chen.z2@a.mail.nagoya-u.ac
       // 替换这里的 "your_file_url" 为你要下载的文件的实际 URL
       window.location.href = "https://www.dropbox.com/scl/fi/66sa2h7jszle3461zv21f/chen-li-CV-March2024.pdf?rlkey=dnavvp2khgtdd9r9q6o0eoa9c&dl=0";
     } else {
-      alert("Incorrect password. Access denied.");
-      // 密码错误时刷新页面
-      location.reload();
+      // 显示错误信息
+      document.getElementById("error-message").innerText = "Incorrect password. Access denied.";
+      // 清空密码输入框
+      document.getElementById("passwordInput").value = "";
     }
 
     document.getElementById("passwordModal").style.display = "none";
@@ -97,4 +98,7 @@ E-mail: <a href="li.chen.z2@a.mail.nagoya-u.ac.jp">li.chen.z2@a.mail.nagoya-u.ac
     <!-- 使用 type="submit" 的按钮，将其放置在 form 内 -->
     <button type="submit">Submit</button>
   </form>
+
+  <!-- 显示错误信息的容器 -->
+  <div id="error-message" style="color: red;"></div>
 </div>
