@@ -60,10 +60,13 @@ E-mail: <a href="li.chen.z2@a.mail.nagoya-u.ac.jp">li.chen.z2@a.mail.nagoya-u.ac
 </td></tr></table>
 
 <h2>CV Download</h2>
-<script>
+  <script>
+    function showPasswordModal() {
+      document.getElementById("passwordModal").style.display = "block";
+    }
+
     function checkPassword() {
-      var enteredPassword = prompt("Enter the password:");
-      // 替换这里的 "your_password" 为你设置的实际密码
+      var enteredPassword = document.getElementById("passwordInput").value;
       var correctPassword = "chenliinnagoya";
 
       if (enteredPassword === correctPassword) {
@@ -72,6 +75,7 @@ E-mail: <a href="li.chen.z2@a.mail.nagoya-u.ac.jp">li.chen.z2@a.mail.nagoya-u.ac
       } else {
         alert("Incorrect password. Access denied.");
       }
+
       // 隐藏密码模态框
       document.getElementById("passwordModal").style.display = "none";
     }
