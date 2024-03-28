@@ -18,6 +18,28 @@
 .fontshow{
   line-height:200%;
   color: red;}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh; 
+    margin: 0;
+}
+.content {
+    text-align: center;
+}
+</style>
+<!--   
+<style>
+.text-justify {
+  text-align: justify; /* 设置文本两端对齐 */
+}
+.p1{text-indent: -40px;}
+.fontshow{
+  line-height:200%;
+  color: red;}
 /* Scrollable news area */
 .news-container {
     max-width: 700px;
@@ -46,6 +68,7 @@ body {
 .content {
     text-align: center;
 }
+-->
 </style>
 </head>
 <body>
@@ -88,8 +111,10 @@ E-mail: <a href="li.chen.z2@a.mail.nagoya-u.ac.jp">li.chen.z2@a.mail.nagoya-u.ac
 </div>
 
 <h2>News</h2>
-<div class="news-container">
-<div class="frame">
+<!-- <div class="news-container">
+<div class="frame"> -->
+<div style="max-width:700px; word-wrap:break-word;">
+<div class="frame" style="max-width:700px; word-wrap:break-word;">
 <p class="text-justify">
 2024-01-24: Our one paper won the AAAI 2024 outstanding paper award <b class= "fontshow">(3 of 2342 accepted papers out of 12,100 submitted)</b> [<a href="https://aihub.org/2024/02/26/congratulations-to-the-aaai2024-outstanding-paper-winners/">See details</a>]<br>
 2024-01-20: Our one paper was accepted by the main track of <b class= "fontshow">AISTATS 2024</b> [<a href="https://virtual.aistats.org/virtual/2024/papers.html?filter=titles">pdf</a>]<br>
