@@ -13,7 +13,7 @@
 <style>
 /* 左侧导航栏的样式 */
 #layout-menu {
-  position: sticky; /* 设置为粘性定位 */
+  position: absolute; /* 设置为绝对定位 */
   top: 0; /* 导航栏距离顶部的距离 */
 }
 .text-justify {
@@ -36,6 +36,32 @@ body {
     text-align: center;
 }
 </style>
+
+<script>
+// 获取左侧导航栏元素
+var layoutMenu = document.getElementById("layout-menu");
+
+// 获取左侧导航栏距离顶部的偏移量
+var menuOffset = layoutMenu.offsetTop;
+
+// 监听页面滚动事件
+window.onscroll = function() {
+  // 获取当前页面滚动的距离
+  var scrollY = window.scrollY || window.pageYOffset;
+  
+  // 如果滚动距离大于左侧导航栏距离顶部的偏移量
+  if (scrollY > menuOffset) {
+    // 将左侧导航栏的位置设为固定
+    layoutMenu.style.position = "fixed";
+    layoutMenu.style.top = "0";
+  } else {
+    // 恢复左侧导航栏的初始位置
+    layoutMenu.style.position = "absolute";
+    layoutMenu.style.top = "";
+  }
+};
+</script>
+  
 </head>
 <body>
 <table summary="Table for page layout." id="tlayout">
