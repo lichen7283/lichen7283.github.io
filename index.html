@@ -14,7 +14,9 @@
 /* 左侧导航栏样式 */
 #layout-menu {
   position: fixed;
-  overflow-y: auto; /* 当导航栏高度超过视口高度时启用垂直滚动条 */ 
+  left: calc((100% - 960px) / 2); /* 让导航栏紧贴在文本区域左侧 */
+  padding-left: 40px; /* 添加左侧内边距 */
+  overflow-y: auto; /* 当导航栏高度超过视口高度时启用垂直滚动条 */
 }
   
 .text-justify {
