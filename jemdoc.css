@@ -24,9 +24,7 @@ body {
 	white-space: nowrap;
         text-align: left;
         vertical-align: top;
-	
 	position: fixed;
-        overflow-y: auto; /* 当导航栏高度超过视口高度时启用垂直滚动条 */
 }
 
 #layout-menu td {
